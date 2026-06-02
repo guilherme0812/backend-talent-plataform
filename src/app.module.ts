@@ -8,4 +8,4 @@ import { TalentModule } from './modules/talent/talent.module';
   providers: [AppService],
   imports: [TalentModule],
 })
-export class AppModule { }
+export class AppModule {}
