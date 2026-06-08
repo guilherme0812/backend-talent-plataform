@@ -1,12 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, Query } from '@nestjs/common';
 import { TalentService } from './talent.service';
 
-@Controller()
+@Controller('talents')
 export class TalentController {
   constructor(readonly talentService: TalentService) {}
 
-  @Get('test')
-  getTest(): string {
-    return this.talentService.getHello();
+  @Get()
+  findAll() {
+    return this.talentService.findAll();
   }
 }
