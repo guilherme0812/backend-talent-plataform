@@ -20,4 +20,14 @@ export class TalentController {
   create(@Body() dto: CreateTalentDto) {
     return this.talentService.create(dto);
   }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() dto: CreateTalentDto) {
+    return this.talentService.update(id, dto);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.talentService.remove(id);
+  }
 }

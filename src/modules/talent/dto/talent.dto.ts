@@ -33,3 +33,5 @@ export class CreateTalentDto {
   @IsBoolean()
   isAvailable?: boolean;
 }
+
+export class UpdateTalentDto extends CreateTalentDto {}
