@@ -44,6 +44,7 @@ const RAW_RUNTIME_STATE =
           ["@types/pg", "npm:8.20.0"],\
           ["@types/supertest", "npm:7.2.0"],\
           ["backend-talent", "workspace:."],\
+          ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.15.1"],\
           ["dotenv", "npm:17.4.2"],\
           ["eslint", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:9.39.4"],\
@@ -2090,7 +2091,7 @@ const RAW_RUNTIME_STATE =
           ["@types/class-validator", null],\
           ["@types/reflect-metadata", null],\
           ["@types/rxjs", null],\
-          ["class-transformer", null],\
+          ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.15.1"],\
           ["file-type", "npm:21.3.4"],\
           ["iterare", "npm:1.2.1"],\
@@ -3993,6 +3994,7 @@ const RAW_RUNTIME_STATE =
           ["@types/pg", "npm:8.20.0"],\
           ["@types/supertest", "npm:7.2.0"],\
           ["backend-talent", "workspace:."],\
+          ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.15.1"],\
           ["dotenv", "npm:17.4.2"],\
           ["eslint", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:9.39.4"],\
@@ -4318,6 +4320,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/cjs-module-lexer-npm-2.2.0-a4ea3b2e41-10c0.zip/node_modules/cjs-module-lexer/",\
         "packageDependencies": [\
           ["cjs-module-lexer", "npm:2.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["class-transformer", [\
+      ["npm:0.5.1", {\
+        "packageLocation": "../../.yarn/berry/cache/class-transformer-npm-0.5.1-96b5161e6c-10c0.zip/node_modules/class-transformer/",\
+        "packageDependencies": [\
+          ["class-transformer", "npm:0.5.1"]\
         ],\
         "linkType": "HARD"\
       }]\
