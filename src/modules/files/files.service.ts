@@ -1,8 +1,4 @@
-import { Injectable, OnModuleInit } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class FilesService implements OnModuleInit {
-  onModuleInit() {
-    console.log('FilesService initialized');
-  }
-}
+export class FilesService {}
