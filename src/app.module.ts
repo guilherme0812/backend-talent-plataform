@@ -4,12 +4,14 @@ import { AppService } from './app.service';
 import { TalentModule } from './modules/talent/talent.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { FilesModule } from './modules/files/files.module';
 
 @Module({
   controllers: [AppController],
   providers: [AppService],
   imports: [
     TalentModule,
+    FilesModule,
 
     ConfigModule.forRoot({
       isGlobal: true,
