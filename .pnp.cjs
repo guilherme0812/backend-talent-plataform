@@ -40,6 +40,7 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/typeorm", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.0.1"],\
           ["@types/express", "npm:5.0.6"],\
           ["@types/jest", "npm:30.0.0"],\
+          ["@types/multer", "npm:2.2.0"],\
           ["@types/node", "npm:24.12.4"],\
           ["@types/pg", "npm:8.20.0"],\
           ["@types/supertest", "npm:7.2.0"],\
@@ -53,6 +54,7 @@ const RAW_RUNTIME_STATE =
           ["globals", "npm:17.6.0"],\
           ["jest", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:30.4.2"],\
           ["minio", "npm:8.0.7"],\
+          ["multer", "npm:2.2.0"],\
           ["pg", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:8.21.0"],\
           ["prettier", "npm:3.8.3"],\
           ["reflect-metadata", "npm:0.2.2"],\
@@ -65,7 +67,8 @@ const RAW_RUNTIME_STATE =
           ["tsconfig-paths", "npm:4.2.0"],\
           ["typeorm", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:1.0.0"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
-          ["typescript-eslint", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:8.60.0"]\
+          ["typescript-eslint", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:8.60.0"],\
+          ["uuid", "npm:14.0.1"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2707,6 +2710,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/multer", [\
+      ["npm:2.2.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@types-multer-npm-2.2.0-d86578262b-10c0.zip/node_modules/@types/multer/",\
+        "packageDependencies": [\
+          ["@types/express", "npm:5.0.6"],\
+          ["@types/multer", "npm:2.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/node", [\
       ["npm:24.12.4", {\
         "packageLocation": "../../.yarn/berry/cache/@types-node-npm-24.12.4-fb0c00261b-10c0.zip/node_modules/@types/node/",\
@@ -4018,6 +4031,7 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/typeorm", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.0.1"],\
           ["@types/express", "npm:5.0.6"],\
           ["@types/jest", "npm:30.0.0"],\
+          ["@types/multer", "npm:2.2.0"],\
           ["@types/node", "npm:24.12.4"],\
           ["@types/pg", "npm:8.20.0"],\
           ["@types/supertest", "npm:7.2.0"],\
@@ -4031,6 +4045,7 @@ const RAW_RUNTIME_STATE =
           ["globals", "npm:17.6.0"],\
           ["jest", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:30.4.2"],\
           ["minio", "npm:8.0.7"],\
+          ["multer", "npm:2.2.0"],\
           ["pg", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:8.21.0"],\
           ["prettier", "npm:3.8.3"],\
           ["reflect-metadata", "npm:0.2.2"],\
@@ -4043,7 +4058,8 @@ const RAW_RUNTIME_STATE =
           ["tsconfig-paths", "npm:4.2.0"],\
           ["typeorm", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:1.0.0"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
-          ["typescript-eslint", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:8.60.0"]\
+          ["typescript-eslint", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:8.60.0"],\
+          ["uuid", "npm:14.0.1"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -7370,6 +7386,17 @@ const RAW_RUNTIME_STATE =
           ["type-is", "npm:1.6.18"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:2.2.0", {\
+        "packageLocation": "../../.yarn/berry/cache/multer-npm-2.2.0-4ed181c78f-10c0.zip/node_modules/multer/",\
+        "packageDependencies": [\
+          ["append-field", "npm:1.0.0"],\
+          ["busboy", "npm:1.6.0"],\
+          ["concat-stream", "npm:2.0.0"],\
+          ["multer", "npm:2.2.0"],\
+          ["type-is", "npm:1.6.18"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["mute-stream", [\
@@ -9449,6 +9476,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/util-deprecate-npm-1.0.2-e3fe1a219c-10c0.zip/node_modules/util-deprecate/",\
         "packageDependencies": [\
           ["util-deprecate", "npm:1.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["uuid", [\
+      ["npm:14.0.1", {\
+        "packageLocation": "../../.yarn/berry/cache/uuid-npm-14.0.1-2fef140bc9-10c0.zip/node_modules/uuid/",\
+        "packageDependencies": [\
+          ["uuid", "npm:14.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\

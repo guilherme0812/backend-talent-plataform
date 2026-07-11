@@ -2,7 +2,7 @@ import { OnModuleInit, Injectable, Inject, Logger } from '@nestjs/common';
 import * as Minio from 'minio';
 import { MINIO_CLIENT } from './minio.config';
 
-const BUCKETS = ['avatar', 'resumes'] as const;
+const BUCKETS = ['avatars', 'resumes'] as const;
 
 @Injectable()
 export class MinioInitService implements OnModuleInit {

@@ -3,7 +3,7 @@ import { FilesService } from './files.service';
 import { createMinioClient, MINIO_CLIENT } from 'src/config/minio.config';
 import { ConfigService } from '@nestjs/config';
 import { FilesController } from './files.controller';
-import { MinioInitService } from 'src/config/minio-init.service';
+import { MinioInitService } from '../../config/minio-init.service';
 
 @Module({
   providers: [
