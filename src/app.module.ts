@@ -5,6 +5,7 @@ import { TalentModule } from './modules/talent/talent.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FilesModule } from './modules/files/files.module';
+import { EmbeddingsModule } from './modules/embeddings/embeddings.module';
 
 @Module({
   controllers: [AppController],
@@ -12,6 +13,7 @@ import { FilesModule } from './modules/files/files.module';
   imports: [
     TalentModule,
     FilesModule,
+    EmbeddingsModule,
 
     ConfigModule.forRoot({
       isGlobal: true,

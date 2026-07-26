@@ -38,6 +38,7 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/schematics", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.0"],\
           ["@nestjs/testing", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.24"],\
           ["@nestjs/typeorm", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.0.1"],\
+          ["@types/bcrypt", "npm:6.0.0"],\
           ["@types/express", "npm:5.0.6"],\
           ["@types/jest", "npm:30.0.0"],\
           ["@types/multer", "npm:2.2.0"],\
@@ -45,6 +46,7 @@ const RAW_RUNTIME_STATE =
           ["@types/pg", "npm:8.20.0"],\
           ["@types/supertest", "npm:7.2.0"],\
           ["backend-talent", "workspace:."],\
+          ["bcrypt", "npm:6.0.0"],\
           ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.15.1"],\
           ["dotenv", "npm:17.4.2"],\
@@ -2557,6 +2559,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/bcrypt", [\
+      ["npm:6.0.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@types-bcrypt-npm-6.0.0-79e170ee38-10c0.zip/node_modules/@types/bcrypt/",\
+        "packageDependencies": [\
+          ["@types/bcrypt", "npm:6.0.0"],\
+          ["@types/node", "npm:25.9.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/body-parser", [\
       ["npm:1.19.6", {\
         "packageLocation": "../../.yarn/berry/cache/@types-body-parser-npm-1.19.6-363c879d4f-10c0.zip/node_modules/@types/body-parser/",\
@@ -4029,6 +4041,7 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/schematics", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.0"],\
           ["@nestjs/testing", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.24"],\
           ["@nestjs/typeorm", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.0.1"],\
+          ["@types/bcrypt", "npm:6.0.0"],\
           ["@types/express", "npm:5.0.6"],\
           ["@types/jest", "npm:30.0.0"],\
           ["@types/multer", "npm:2.2.0"],\
@@ -4036,6 +4049,7 @@ const RAW_RUNTIME_STATE =
           ["@types/pg", "npm:8.20.0"],\
           ["@types/supertest", "npm:7.2.0"],\
           ["backend-talent", "workspace:."],\
+          ["bcrypt", "npm:6.0.0"],\
           ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.15.1"],\
           ["dotenv", "npm:17.4.2"],\
@@ -4094,6 +4108,18 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/baseline-browser-mapping-npm-2.10.33-38ceed2dd3-10c0.zip/node_modules/baseline-browser-mapping/",\
         "packageDependencies": [\
           ["baseline-browser-mapping", "npm:2.10.33"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["bcrypt", [\
+      ["npm:6.0.0", {\
+        "packageLocation": "./.yarn/unplugged/bcrypt-npm-6.0.0-fb16e34c40/node_modules/bcrypt/",\
+        "packageDependencies": [\
+          ["bcrypt", "npm:6.0.0"],\
+          ["node-addon-api", "npm:8.9.0"],\
+          ["node-gyp", "npm:12.3.0"],\
+          ["node-gyp-build", "npm:4.8.4"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7453,6 +7479,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["node-addon-api", [\
+      ["npm:8.9.0", {\
+        "packageLocation": "./.yarn/unplugged/node-addon-api-npm-8.9.0-a678c5626b/node_modules/node-addon-api/",\
+        "packageDependencies": [\
+          ["node-addon-api", "npm:8.9.0"],\
+          ["node-gyp", "npm:12.3.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["node-emoji", [\
       ["npm:1.11.0", {\
         "packageLocation": "../../.yarn/berry/cache/node-emoji-npm-1.11.0-dd2f09050c-10c0.zip/node_modules/node-emoji/",\
@@ -7478,6 +7514,15 @@ const RAW_RUNTIME_STATE =
           ["tinyglobby", "npm:0.2.17"],\
           ["undici", "npm:6.26.0"],\
           ["which", "npm:6.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["node-gyp-build", [\
+      ["npm:4.8.4", {\
+        "packageLocation": "../../.yarn/berry/cache/node-gyp-build-npm-4.8.4-106c2a0b4f-10c0.zip/node_modules/node-gyp-build/",\
+        "packageDependencies": [\
+          ["node-gyp-build", "npm:4.8.4"]\
         ],\
         "linkType": "HARD"\
       }]\

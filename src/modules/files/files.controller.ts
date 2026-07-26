@@ -6,13 +6,23 @@ import { FileInterceptor } from '@nestjs/platform-express';
 export class FilesController {
   constructor(private readonly filesService: FilesService) {}
 
-  @Post('avatar/:talentid')
+  @Post('avatar/:talentId')
   @UseInterceptors(FileInterceptor('file'))
   async uploadAvatar(
-    @Param('talentid') talentId: string,
+    @Param('talentId') talentId: string,
     @UploadedFile() file: Express.Multer.File,
   ) {
     const url = await this.filesService.uploadAvatar(file, talentId);
+    return { url };
+  }
+
+  @Post('resume/:talentId')
+  @UseInterceptors(FileInterceptor('file'))
+  async uploadResume(
+    @Param('talentId') talentId: string,
+    @UploadedFile() file: Express.Multer.File,
+  ) {
+    const url = await this.filesService.uploadResume(file, talentId);
     return { url };
   }
 }

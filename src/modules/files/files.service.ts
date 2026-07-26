@@ -33,6 +33,7 @@ export class FilesService {
   }
 
   async uploadResume(file: Express.Multer.File, talentId: string): Promise<string> {
+    this.validateDocument(file);
     const objectName = `${talentId}/${uuidv4()}.pdf`;
     return this.upload('resumes', objectName, file);
   }
@@ -62,7 +63,14 @@ export class FilesService {
     return `${protocol}://${endpoint}:${port}/${bucket}/${objectName}`;
   }
 
-  async getPresignedUrl() {}
+  async getPresignedUrl(bucket: BucketName, objectName: string): Promise<string> {
+    try {
+      return await this.minio.presignedGetObject(bucket, objectName, 3600);
+    } catch (err) {
+      this.logger.error(`Error on generating presigned URL: ${err.message}`);
+      throw new InternalServerErrorException('Error on generating presigned URL');
+    }
+  }
 
   async deleteObject(bucket: BucketName, objectName: string): Promise<void> {
     try {
