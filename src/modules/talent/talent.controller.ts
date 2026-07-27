@@ -1,7 +1,9 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, Query } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, Query, UseGuards } from '@nestjs/common';
 import { TalentService } from './talent.service';
 import { CreateTalentDto } from './dto/talent.dto';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
+@UseGuards(JwtAuthGuard)
 @Controller('talents')
 export class TalentController {
   constructor(readonly talentService: TalentService) {}

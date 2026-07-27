@@ -1,14 +1,22 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import { ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm/dist/common/typeorm.decorators';
-import { User } from './entities/user.entity';
+import { User, UserRole } from './entities/user.entity';
 import { Repository } from 'typeorm';
 import { LoginDto, RegisterDto } from './dto/auth.dto';
+import { JwtService } from '@nestjs/jwt';
+
+export interface JwtPayload {
+  sub: string;
+  email: string;
+  role: UserRole;
+}
 
 @Injectable()
 export class AuthService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
+    private readonly jwtService: JwtService,
   ) {}
 
   async register(userData: RegisterDto) {
@@ -19,8 +27,8 @@ export class AuthService {
       ...userData,
     });
 
-    const savedUser = await this.userRepository.save(user);
-    return savedUser;
+    await this.userRepository.save(user);
+    return this.signToken(user);
   }
 
   async login(loginData: LoginDto) {
@@ -34,6 +42,25 @@ export class AuthService {
     if (!user || !(await user.comparePassword(password))) {
       throw new Error('Invalid credentials');
     }
+    return this.signToken(user);
+  }
+
+  async validateUser(payload: JwtPayload): Promise<User> {
+    const user = await this.userRepository.findOneBy({ id: payload.sub });
+    if (!user) throw new UnauthorizedException();
     return user;
+  }
+
+  private signToken(user: User) {
+    const payload: JwtPayload = {
+      sub: user.id,
+      email: user.email,
+      role: user.role,
+    };
+
+    return {
+      accessToken: this.jwtService.sign(payload),
+      user: { id: user.id, email: user.email, name: user.name, role: user.role },
+    };
   }
 }
