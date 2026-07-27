@@ -4,11 +4,13 @@ import {
   Logger,
   InternalServerErrorException,
   BadRequestException,
+  NotFoundException,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { MINIO_CLIENT } from 'src/config/minio.config';
 import * as Minio from 'minio';
 import { v4 as uuidv4 } from 'uuid';
+import { TalentService } from '../talent/talent.service';
 
 export type BucketName = 'avatars' | 'resumes';
 
@@ -23,9 +25,12 @@ export class FilesService {
   constructor(
     @Inject(MINIO_CLIENT) private readonly minio: Minio.Client,
     private readonly config: ConfigService,
+    private readonly talentService: TalentService,
   ) {}
 
   async uploadAvatar(file: Express.Multer.File, talentId: string): Promise<string> {
+    await this.talentService.findOne(talentId);
+
     this.validateImage(file);
     const ext = file.originalname.split('.').pop();
     const objectName = `${talentId}/${uuidv4()}.${ext}`;
@@ -33,6 +38,8 @@ export class FilesService {
   }
 
   async uploadResume(file: Express.Multer.File, talentId: string): Promise<string> {
+    await this.talentService.findOne(talentId);
+
     this.validateDocument(file);
     const objectName = `${talentId}/${uuidv4()}.pdf`;
     return this.upload('resumes', objectName, file);

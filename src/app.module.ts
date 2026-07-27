@@ -7,11 +7,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { FilesModule } from './modules/files/files.module';
 import { EmbeddingsModule } from './modules/embeddings/embeddings.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   controllers: [AppController],
   providers: [AppService],
   imports: [
+    UsersModule,
     AuthModule,
     TalentModule,
     FilesModule,
