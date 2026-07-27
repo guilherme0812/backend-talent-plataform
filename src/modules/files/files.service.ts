@@ -11,6 +11,7 @@ import { MINIO_CLIENT } from 'src/config/minio.config';
 import * as Minio from 'minio';
 import { v4 as uuidv4 } from 'uuid';
 import { TalentService } from '../talent/talent.service';
+import { EmbeddingsService } from '../embeddings/embeddings.service';
 
 export type BucketName = 'avatars' | 'resumes';
 
@@ -26,6 +27,7 @@ export class FilesService {
     @Inject(MINIO_CLIENT) private readonly minio: Minio.Client,
     private readonly config: ConfigService,
     private readonly talentService: TalentService,
+    private readonly embeddingsService: EmbeddingsService,
   ) {}
 
   async uploadAvatar(file: Express.Multer.File, talentId: string): Promise<string> {
@@ -42,6 +44,9 @@ export class FilesService {
 
     this.validateDocument(file);
     const objectName = `${talentId}/${uuidv4()}.pdf`;
+
+    await this.embeddingsService.generateEmbeddingfromFile(file, talentId);
+
     return this.upload('resumes', objectName, file);
   }
 

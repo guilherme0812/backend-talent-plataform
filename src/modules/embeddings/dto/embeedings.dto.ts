@@ -9,7 +9,7 @@ export class SaveEmbeddingDto {
 
 export class SearchSimilarDto {
   @IsArray()
-  @ArrayMinSize(1536)
+  @ArrayMinSize(768)
   @IsNumber({}, { each: true })
   vector: number[];
 

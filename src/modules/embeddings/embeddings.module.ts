@@ -8,5 +8,6 @@ import { EmbeddingsService } from './embeddings.service';
   imports: [TypeOrmModule.forFeature([Talent])],
   providers: [EmbeddingsService],
   controllers: [EmbeddingsController],
+  exports: [EmbeddingsService],
 })
 export class EmbeddingsModule {}

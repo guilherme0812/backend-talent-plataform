@@ -5,9 +5,10 @@ import { ConfigService } from '@nestjs/config';
 import { FilesController } from './files.controller';
 import { MinioInitService } from '../../config/minio-init.service';
 import { TalentModule } from '../talent/talent.module';
+import { EmbeddingsModule } from '../embeddings/embeddings.module';
 
 @Module({
-  imports: [TalentModule],
+  imports: [TalentModule, EmbeddingsModule],
   providers: [
     {
       provide: MINIO_CLIENT,

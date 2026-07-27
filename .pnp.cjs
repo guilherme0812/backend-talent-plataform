@@ -61,8 +61,10 @@ const RAW_RUNTIME_STATE =
           ["jest", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:30.4.2"],\
           ["minio", "npm:8.0.7"],\
           ["multer", "npm:2.2.0"],\
+          ["ollama", "npm:0.6.3"],\
           ["passport", "npm:0.7.0"],\
           ["passport-jwt", "npm:4.0.1"],\
+          ["pdf-parse", "npm:2.4.5"],\
           ["pg", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:8.21.0"],\
           ["prettier", "npm:3.8.3"],\
           ["reflect-metadata", "npm:0.2.2"],\
@@ -2012,6 +2014,212 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@lukeed-csprng-npm-1.1.0-d28ed78cc2-10c0.zip/node_modules/@lukeed/csprng/",\
         "packageDependencies": [\
           ["@lukeed/csprng", "npm:1.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "../../.yarn/berry/cache/@napi-rs-canvas-npm-0.1.100-656d01a5c8-10c0.zip/node_modules/@napi-rs/canvas/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas", "npm:0.1.100"],\
+          ["@napi-rs/canvas-android-arm64", "npm:0.1.100"],\
+          ["@napi-rs/canvas-darwin-arm64", "npm:0.1.100"],\
+          ["@napi-rs/canvas-darwin-x64", "npm:0.1.100"],\
+          ["@napi-rs/canvas-linux-arm-gnueabihf", "npm:0.1.100"],\
+          ["@napi-rs/canvas-linux-arm64-gnu", "npm:0.1.100"],\
+          ["@napi-rs/canvas-linux-arm64-musl", "npm:0.1.100"],\
+          ["@napi-rs/canvas-linux-riscv64-gnu", "npm:0.1.100"],\
+          ["@napi-rs/canvas-linux-x64-gnu", "npm:0.1.100"],\
+          ["@napi-rs/canvas-linux-x64-musl", "npm:0.1.100"],\
+          ["@napi-rs/canvas-win32-arm64-msvc", "npm:0.1.100"],\
+          ["@napi-rs/canvas-win32-x64-msvc", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "../../.yarn/berry/cache/@napi-rs-canvas-npm-0.1.80-872f2f219b-10c0.zip/node_modules/@napi-rs/canvas/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas", "npm:0.1.80"],\
+          ["@napi-rs/canvas-android-arm64", "npm:0.1.80"],\
+          ["@napi-rs/canvas-darwin-arm64", "npm:0.1.80"],\
+          ["@napi-rs/canvas-darwin-x64", "npm:0.1.80"],\
+          ["@napi-rs/canvas-linux-arm-gnueabihf", "npm:0.1.80"],\
+          ["@napi-rs/canvas-linux-arm64-gnu", "npm:0.1.80"],\
+          ["@napi-rs/canvas-linux-arm64-musl", "npm:0.1.80"],\
+          ["@napi-rs/canvas-linux-riscv64-gnu", "npm:0.1.80"],\
+          ["@napi-rs/canvas-linux-x64-gnu", "npm:0.1.80"],\
+          ["@napi-rs/canvas-linux-x64-musl", "npm:0.1.80"],\
+          ["@napi-rs/canvas-win32-x64-msvc", "npm:0.1.80"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-android-arm64", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-android-arm64-npm-0.1.100-e92a7907a7/node_modules/@napi-rs/canvas-android-arm64/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-android-arm64", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-android-arm64-npm-0.1.80-c24b09f58e/node_modules/@napi-rs/canvas-android-arm64/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-android-arm64", "npm:0.1.80"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-darwin-arm64", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-darwin-arm64-npm-0.1.100-a48fd15c37/node_modules/@napi-rs/canvas-darwin-arm64/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-darwin-arm64", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-darwin-arm64-npm-0.1.80-6e45c0edc0/node_modules/@napi-rs/canvas-darwin-arm64/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-darwin-arm64", "npm:0.1.80"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-darwin-x64", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-darwin-x64-npm-0.1.100-06c2a86bba/node_modules/@napi-rs/canvas-darwin-x64/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-darwin-x64", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-darwin-x64-npm-0.1.80-5035e373a4/node_modules/@napi-rs/canvas-darwin-x64/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-darwin-x64", "npm:0.1.80"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-linux-arm-gnueabihf", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-arm-gnueabihf-npm-0.1.100-1f35abec0e/node_modules/@napi-rs/canvas-linux-arm-gnueabihf/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-arm-gnueabihf", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-arm-gnueabihf-npm-0.1.80-3fbd0582e2/node_modules/@napi-rs/canvas-linux-arm-gnueabihf/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-arm-gnueabihf", "npm:0.1.80"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-linux-arm64-gnu", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-arm64-gnu-npm-0.1.100-540f3bef6e/node_modules/@napi-rs/canvas-linux-arm64-gnu/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-arm64-gnu", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-arm64-gnu-npm-0.1.80-a5b1c30422/node_modules/@napi-rs/canvas-linux-arm64-gnu/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-arm64-gnu", "npm:0.1.80"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-linux-arm64-musl", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-arm64-musl-npm-0.1.100-9413936e2e/node_modules/@napi-rs/canvas-linux-arm64-musl/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-arm64-musl", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-arm64-musl-npm-0.1.80-a3ba58b7da/node_modules/@napi-rs/canvas-linux-arm64-musl/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-arm64-musl", "npm:0.1.80"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-linux-riscv64-gnu", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-riscv64-gnu-npm-0.1.100-3fb3e44580/node_modules/@napi-rs/canvas-linux-riscv64-gnu/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-riscv64-gnu", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-riscv64-gnu-npm-0.1.80-21a287d2a5/node_modules/@napi-rs/canvas-linux-riscv64-gnu/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-riscv64-gnu", "npm:0.1.80"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-linux-x64-gnu", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-x64-gnu-npm-0.1.100-313e0233e2/node_modules/@napi-rs/canvas-linux-x64-gnu/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-x64-gnu", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-x64-gnu-npm-0.1.80-1af42fb5ee/node_modules/@napi-rs/canvas-linux-x64-gnu/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-x64-gnu", "npm:0.1.80"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-linux-x64-musl", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-x64-musl-npm-0.1.100-12eb4ccdb6/node_modules/@napi-rs/canvas-linux-x64-musl/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-x64-musl", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-linux-x64-musl-npm-0.1.80-71cd684385/node_modules/@napi-rs/canvas-linux-x64-musl/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-linux-x64-musl", "npm:0.1.80"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-win32-arm64-msvc", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-win32-arm64-msvc-npm-0.1.100-6f95e6b84c/node_modules/@napi-rs/canvas-win32-arm64-msvc/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-win32-arm64-msvc", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@napi-rs/canvas-win32-x64-msvc", [\
+      ["npm:0.1.100", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-win32-x64-msvc-npm-0.1.100-6db82291d8/node_modules/@napi-rs/canvas-win32-x64-msvc/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-win32-x64-msvc", "npm:0.1.100"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.80", {\
+        "packageLocation": "./.yarn/unplugged/@napi-rs-canvas-win32-x64-msvc-npm-0.1.80-5b01fb9510/node_modules/@napi-rs/canvas-win32-x64-msvc/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas-win32-x64-msvc", "npm:0.1.80"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4180,8 +4388,10 @@ const RAW_RUNTIME_STATE =
           ["jest", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:30.4.2"],\
           ["minio", "npm:8.0.7"],\
           ["multer", "npm:2.2.0"],\
+          ["ollama", "npm:0.6.3"],\
           ["passport", "npm:0.7.0"],\
           ["passport-jwt", "npm:4.0.1"],\
+          ["pdf-parse", "npm:2.4.5"],\
           ["pg", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:8.21.0"],\
           ["prettier", "npm:3.8.3"],\
           ["reflect-metadata", "npm:0.2.2"],\
@@ -7838,6 +8048,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["ollama", [\
+      ["npm:0.6.3", {\
+        "packageLocation": "../../.yarn/berry/cache/ollama-npm-0.6.3-9d213226b5-10c0.zip/node_modules/ollama/",\
+        "packageDependencies": [\
+          ["ollama", "npm:0.6.3"],\
+          ["whatwg-fetch", "npm:3.6.20"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["on-finished", [\
       ["npm:2.4.1", {\
         "packageLocation": "../../.yarn/berry/cache/on-finished-npm-2.4.1-907af70f88-10c0.zip/node_modules/on-finished/",\
@@ -8098,6 +8318,27 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/pause-npm-0.0.1-0c421a299d-10c0.zip/node_modules/pause/",\
         "packageDependencies": [\
           ["pause", "npm:0.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["pdf-parse", [\
+      ["npm:2.4.5", {\
+        "packageLocation": "../../.yarn/berry/cache/pdf-parse-npm-2.4.5-3c06aaa18d-10c0.zip/node_modules/pdf-parse/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas", "npm:0.1.80"],\
+          ["pdf-parse", "npm:2.4.5"],\
+          ["pdfjs-dist", "npm:5.4.296"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["pdfjs-dist", [\
+      ["npm:5.4.296", {\
+        "packageLocation": "../../.yarn/berry/cache/pdfjs-dist-npm-5.4.296-8918b8ec71-10c0.zip/node_modules/pdfjs-dist/",\
+        "packageDependencies": [\
+          ["@napi-rs/canvas", "npm:0.1.100"],\
+          ["pdfjs-dist", "npm:5.4.296"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -9961,6 +10202,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/webpack-sources-npm-3.5.0-b448c72415-10c0.zip/node_modules/webpack-sources/",\
         "packageDependencies": [\
           ["webpack-sources", "npm:3.5.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["whatwg-fetch", [\
+      ["npm:3.6.20", {\
+        "packageLocation": "../../.yarn/berry/cache/whatwg-fetch-npm-3.6.20-a6f79b98c4-10c0.zip/node_modules/whatwg-fetch/",\
+        "packageDependencies": [\
+          ["whatwg-fetch", "npm:3.6.20"]\
         ],\
         "linkType": "HARD"\
       }]\

@@ -23,7 +23,17 @@ export class EmbeddingsController {
 
   @Post('search')
   @HttpCode(HttpStatus.OK)
-  async search(@Body() body: SearchSimilarDto) {}
+  async search(@Body() body: SearchSimilarDto) {
+    const result = await this.embeddingsService.searchSimilar(body.vector, 10, 0);
+    return result;
+  }
+
+  @Post('embed-text')
+  @HttpCode(HttpStatus.OK)
+  async embedText(@Body() body: { text: string }) {
+    const result = await this.embeddingsService.embedText(body.text);
+    return result;
+  }
 
   @Post('index')
   @HttpCode(HttpStatus.NO_CONTENT)

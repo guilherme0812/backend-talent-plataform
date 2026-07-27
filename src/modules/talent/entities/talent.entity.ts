@@ -65,7 +65,7 @@ export class Talent {
     select: false, // Não seleciona por padrão para evitar overhead
     comment: 'Embedding vetorial (pgvector vector(1536))',
   })
-  embeeding?: string;
+  embedding?: string;
 
   @CreateDateColumn()
   createAt: Date;
