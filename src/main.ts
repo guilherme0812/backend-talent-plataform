@@ -18,4 +18,8 @@ async function bootstrap() {
   await app.listen(process.env.PORT ?? 3000);
   logger.log(`Application is running on: ${await app.getUrl()}`);
 }
-bootstrap();
+bootstrap().catch((error) => {
+  const logger = new Logger('Bootstrap');
+  logger.error('Error during application bootstrap', error);
+  process.exit(1);
+});
