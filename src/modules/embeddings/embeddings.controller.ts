@@ -24,7 +24,7 @@ export class EmbeddingsController {
   @Post('search')
   @HttpCode(HttpStatus.OK)
   async search(@Body() body: SearchSimilarDto) {
-    const result = await this.embeddingsService.searchSimilar(body.vector, 10, 0);
+    const result = await this.embeddingsService.searchSimilar(body.vector, 10, 7);
     return result;
   }
 

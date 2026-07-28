@@ -46,7 +46,7 @@ export class Talent {
   @Column({ nullable: true, type: 'decimal', precision: 10, scale: 2 })
   expectedSalary?: number;
 
-  @Column({ default: true })
+  @Column({ default: true, name: 'is_available' })
   isAvailable: boolean;
 
   /**

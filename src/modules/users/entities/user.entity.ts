@@ -6,8 +6,11 @@ import {
   UpdateDateColumn,
   BeforeInsert,
   BeforeUpdate,
+  OneToOne,
+  JoinColumn,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
+import { Talent } from '../../talent/entities/talent.entity';
 
 export enum UserRole {
   ADMIN = 'admin',
@@ -31,6 +34,10 @@ export class User {
 
   @Column({ type: 'enum', enum: UserRole, default: UserRole.TALENT })
   role: UserRole;
+
+  @OneToOne(() => Talent, { nullable: true })
+  @JoinColumn()
+  talent?: Talent;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

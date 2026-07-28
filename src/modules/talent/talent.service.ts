@@ -17,14 +17,14 @@ export class TalentService {
     return this.repo.find();
   }
 
-  async searchSimilar(text: string) {
-    const vector = await this.embeddingsService.embedText(text);
+  async searchSimilar(text: string, topK?: number, threshold?: number) {
+    const vector = await this.embeddingsService.embedQuery(text);
 
     if (vector.length === 0) {
       throw new ConflictException('Failed to generate embedding for the provided text');
     }
 
-    const results = await this.embeddingsService.searchSimilar(vector, 10, 0.1);
+    const results = await this.embeddingsService.searchSimilar(vector, topK, threshold);
     return results;
   }
 

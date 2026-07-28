@@ -38,7 +38,7 @@ export class EmbeddingsService {
       throw new BadRequestException('It was not possible to extract text from the uploaded file.');
     }
 
-    const vector = await this.embedText(text);
+    const vector = await this.embedDocument(text);
 
     await this.saveEmbedding(talentId, vector);
 
@@ -64,6 +64,14 @@ export class EmbeddingsService {
       this.logger.error(`Erro ao gerar embedding via Ollama: ${error.message}`);
       throw new InternalServerErrorException('Erro ao gerar embedding via Ollama');
     }
+  }
+
+  async embedDocument(text: string): Promise<number[]> {
+    return this.embedText(`search_document: ${text}`);
+  }
+
+  async embedQuery(text: string): Promise<number[]> {
+    return this.embedText(`search_query: ${text}`);
   }
 
   async saveEmbedding(talentId: string, vector: number[]): Promise<void> {
@@ -92,7 +100,6 @@ export class EmbeddingsService {
     threshold = 0.7,
   ): Promise<SimilarityResult[]> {
     const vectorStr = `[${queryVector.join(',')}]`;
-
     /**
      * Distância cosseno via pgvector: (1 - embedding <=> query) = similaridade
      * IVFFlat index acelera a busca em grandes volumes.
@@ -109,6 +116,7 @@ export class EmbeddingsService {
       FROM talents
       WHERE
         embedding IS NOT NULL
+        AND is_available = true
         AND 1 - (embedding <=> $1::vector) >= $2
       ORDER BY embedding <=> $1::vector
       LIMIT $3

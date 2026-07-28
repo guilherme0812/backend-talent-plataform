@@ -19,8 +19,15 @@ export class TalentController {
   }
 
   @Get('search/similar')
-  searchSimilar(@Query('text') text: string) {
-    return this.talentService.searchSimilar(text);
+  searchSimilar(
+    @Query('text') text: string,
+    @Query('topK') topK?: string,
+    @Query('threshold') threshold?: string,
+  ) {
+    const _topK = topK ? Number(topK) : undefined;
+    const _threshold = threshold ? Number(threshold) : undefined;
+
+    return this.talentService.searchSimilar(text, _topK, _threshold);
   }
 
   @Post()
