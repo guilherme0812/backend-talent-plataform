@@ -3,16 +3,29 @@ import { Repository } from 'typeorm';
 import { Talent } from './entities/talent.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateTalentDto, UpdateTalentDto } from './dto/talent.dto';
+import { EmbeddingsService } from '../embeddings/embeddings.service';
 
 @Injectable()
 export class TalentService {
   constructor(
     @InjectRepository(Talent)
     private readonly repo: Repository<Talent>,
+    private readonly embeddingsService: EmbeddingsService,
   ) {}
 
   async findAll(): Promise<Talent[]> {
     return this.repo.find();
+  }
+
+  async searchSimilar(text: string) {
+    const vector = await this.embeddingsService.embedText(text);
+
+    if (vector.length === 0) {
+      throw new ConflictException('Failed to generate embedding for the provided text');
+    }
+
+    const results = await this.embeddingsService.searchSimilar(vector, 10, 0.1);
+    return results;
   }
 
   async findOne(id: string): Promise<Talent> {

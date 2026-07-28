@@ -4,7 +4,6 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  Index,
 } from 'typeorm';
 
 @Entity('talents')
@@ -27,7 +26,7 @@ export class Talent {
   @Column({
     nullable: true,
   })
-  resumeUrl: string;
+  resumeObjectName: string;
 
   @Column('text', { array: true, default: [] })
   skills: string[];

@@ -4,7 +4,6 @@ import {
   Logger,
   InternalServerErrorException,
   BadRequestException,
-  NotFoundException,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { MINIO_CLIENT } from 'src/config/minio.config';
@@ -31,27 +30,39 @@ export class FilesService {
   ) {}
 
   async uploadAvatar(file: Express.Multer.File, talentId: string): Promise<string> {
-    await this.talentService.findOne(talentId);
+    const talent = await this.talentService.findOne(talentId);
 
     this.validateImage(file);
     const ext = file.originalname.split('.').pop();
     const objectName = `${talentId}/${uuidv4()}.${ext}`;
-    return this.upload('avatars', objectName, file);
+
+    const url = await this.upload('avatars', objectName, file);
+
+    talent.avatarUrl = url;
+    await this.talentService.update(talentId, talent);
+
+    return url;
   }
 
-  async uploadResume(file: Express.Multer.File, talentId: string): Promise<string> {
-    await this.talentService.findOne(talentId);
+  async uploadResume(file: Express.Multer.File, talentId: string): Promise<void> {
+    const talent = await this.talentService.findOne(talentId);
 
     this.validateDocument(file);
-    const objectName = `${talentId}/${uuidv4()}.pdf`;
+
+    const uuid = uuidv4();
+    const objectName = `${talentId}/${uuid}.pdf`;
+
+    talent.resumeObjectName = objectName;
 
     await this.embeddingsService.generateEmbeddingfromFile(file, talentId);
 
-    return this.upload('resumes', objectName, file);
+    await this.upload('resumes', objectName, file);
+
+    await this.talentService.update(talentId, talent);
   }
 
   private async upload(
-    bucket: string,
+    bucket: BucketName,
     objectName: string,
     file: Express.Multer.File,
   ): Promise<string> {
@@ -60,7 +71,7 @@ export class FilesService {
         'Content-Type': file.mimetype,
       });
       this.logger.log(`Upload with success: ${bucket}/${objectName}`);
-      return this.buildPublicUrl(bucket, objectName);
+      return this.getPresignedUrl(bucket, objectName);
     } catch (error: any) {
       this.logger.error(`Error uploading file: ${error.message}`);
       throw new InternalServerErrorException('Error uploading file');

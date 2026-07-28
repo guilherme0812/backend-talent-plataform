@@ -1,4 +1,4 @@
-import { Controller, Param, Post, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, Param, Post, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { FilesService } from './files.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 
@@ -23,6 +23,17 @@ export class FilesController {
     @UploadedFile() file: Express.Multer.File,
   ) {
     const url = await this.filesService.uploadResume(file, talentId);
+    return { url };
+  }
+
+  @Get('presigned-url/:bucket/:talentId/:fileName')
+  async getPresignedUrl(
+    @Param('bucket') bucket: 'avatars' | 'resumes',
+    @Param('talentId') talentId: string,
+    @Param('fileName') fileName: string,
+  ) {
+    const objectName = `${talentId}/${fileName}`;
+    const url = await this.filesService.getPresignedUrl(bucket, objectName);
     return { url };
   }
 }

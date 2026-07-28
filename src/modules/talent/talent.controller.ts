@@ -18,6 +18,11 @@ export class TalentController {
     return this.talentService.findOne(id);
   }
 
+  @Get('search/similar')
+  searchSimilar(@Query('text') text: string) {
+    return this.talentService.searchSimilar(text);
+  }
+
   @Post()
   create(@Body() dto: CreateTalentDto) {
     return this.talentService.create(dto);
