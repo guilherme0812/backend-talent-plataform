@@ -59,12 +59,12 @@ export class Talent {
    * migration SQL pura (veja CreateTalentEmbedding migration).
    */
   @Column({
-    type: 'text',
+    type: 'vector',
     nullable: true,
     select: false, // Não seleciona por padrão para evitar overhead
     comment: 'Embedding vetorial (pgvector vector(1536))',
   })
-  embedding?: string;
+  embedding?: number[];
 
   @CreateDateColumn()
   createAt: Date;
