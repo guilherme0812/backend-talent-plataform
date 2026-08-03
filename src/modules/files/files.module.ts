@@ -1,14 +1,14 @@
-import { Module } from '@nestjs/common';
+import { forwardRef, Module } from '@nestjs/common';
 import { FilesService } from './files.service';
 import { createMinioClient, MINIO_CLIENT } from 'src/config/minio.config';
 import { ConfigService } from '@nestjs/config';
 import { FilesController } from './files.controller';
 import { MinioInitService } from '../../config/minio-init.service';
-import { TalentModule } from '../talent/talent.module';
 import { EmbeddingsModule } from '../embeddings/embeddings.module';
+import { TalentModule } from '../talent/talent.module';
 
 @Module({
-  imports: [TalentModule, EmbeddingsModule],
+  imports: [EmbeddingsModule, forwardRef(() => TalentModule)],
   providers: [
     {
       provide: MINIO_CLIENT,
@@ -19,5 +19,6 @@ import { EmbeddingsModule } from '../embeddings/embeddings.module';
     MinioInitService,
   ],
   controllers: [FilesController],
+  exports: [FilesService],
 })
 export class FilesModule {}

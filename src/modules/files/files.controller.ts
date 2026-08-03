@@ -36,4 +36,11 @@ export class FilesController {
     const url = await this.filesService.getPresignedUrl(bucket, objectName);
     return { url };
   }
+
+  @Post('extract-talent-from-file')
+  @UseInterceptors(FileInterceptor('file'))
+  async extractTalentFromFile(@UploadedFile() file: Express.Multer.File) {
+    const data = await this.filesService.extractTalentFromFile(file);
+    return { data };
+  }
 }
