@@ -39,6 +39,7 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/platform-express", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.24"],\
           ["@nestjs/schematics", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.0"],\
           ["@nestjs/testing", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.24"],\
+          ["@nestjs/throttler", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:6.5.0"],\
           ["@nestjs/typeorm", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.0.1"],\
           ["@types/bcrypt", "npm:6.0.0"],\
           ["@types/express", "npm:5.0.6"],\
@@ -2581,6 +2582,36 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@nestjs/throttler", [\
+      ["npm:6.5.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@nestjs-throttler-npm-6.5.0-b1c890481d-10c0.zip/node_modules/@nestjs/throttler/",\
+        "packageDependencies": [\
+          ["@nestjs/throttler", "npm:6.5.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:6.5.0", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-throttler-virtual-d083515344/3/.yarn/berry/cache/@nestjs-throttler-npm-6.5.0-b1c890481d-10c0.zip/node_modules/@nestjs/throttler/",\
+        "packageDependencies": [\
+          ["@nestjs/common", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.24"],\
+          ["@nestjs/core", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.24"],\
+          ["@nestjs/throttler", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:6.5.0"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["reflect-metadata", "npm:0.2.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "reflect-metadata"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@nestjs/typeorm", [\
       ["npm:11.0.1", {\
         "packageLocation": "../../.yarn/berry/cache/@nestjs-typeorm-npm-11.0.1-b711a86b8a-10c0.zip/node_modules/@nestjs/typeorm/",\
@@ -4367,6 +4398,7 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/platform-express", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.24"],\
           ["@nestjs/schematics", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.0"],\
           ["@nestjs/testing", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.1.24"],\
+          ["@nestjs/throttler", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:6.5.0"],\
           ["@nestjs/typeorm", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:11.0.1"],\
           ["@types/bcrypt", "npm:6.0.0"],\
           ["@types/express", "npm:5.0.6"],\

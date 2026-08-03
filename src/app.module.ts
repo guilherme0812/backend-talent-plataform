@@ -8,20 +8,34 @@ import { FilesModule } from './modules/files/files.module';
 import { EmbeddingsModule } from './modules/embeddings/embeddings.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { UsersModule } from './modules/users/users.module';
+import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
+import { APP_GUARD } from '@nestjs/core';
 
 @Module({
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
+  ],
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    ThrottlerModule.forRoot([
+      {
+        name: 'default',
+        ttl: 60000,
+        limit: 100,
+      },
+    ]),
     UsersModule,
     AuthModule,
     TalentModule,
     FilesModule,
     EmbeddingsModule,
-
-    ConfigModule.forRoot({
-      isGlobal: true,
-    }),
 
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
