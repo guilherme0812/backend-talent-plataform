@@ -78,7 +78,8 @@ const RAW_RUNTIME_STATE =
           ["typeorm", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:1.0.0"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
           ["typescript-eslint", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:8.60.0"],\
-          ["uuid", "npm:14.0.1"]\
+          ["uuid", "npm:14.0.1"],\
+          ["zod", "npm:4.4.3"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -4405,7 +4406,8 @@ const RAW_RUNTIME_STATE =
           ["typeorm", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:1.0.0"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
           ["typescript-eslint", "virtual:e1907d777df0c37151728a6620f2f65bf6f78df43dd4f81531a5de134fa721aaa3a980f21f025b4eadf1d77c3d25b178ded04a41d3769297d7b6044acf1bb9f2#npm:8.60.0"],\
-          ["uuid", "npm:14.0.1"]\
+          ["uuid", "npm:14.0.1"],\
+          ["zod", "npm:4.4.3"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -10444,6 +10446,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/yoctocolors-cjs-npm-2.1.3-968713fbd8-10c0.zip/node_modules/yoctocolors-cjs/",\
         "packageDependencies": [\
           ["yoctocolors-cjs", "npm:2.1.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["zod", [\
+      ["npm:4.4.3", {\
+        "packageLocation": "../../.yarn/berry/cache/zod-npm-4.4.3-36e81f791e-10c0.zip/node_modules/zod/",\
+        "packageDependencies": [\
+          ["zod", "npm:4.4.3"]\
         ],\
         "linkType": "HARD"\
       }]\
