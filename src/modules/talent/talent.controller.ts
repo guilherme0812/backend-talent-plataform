@@ -1,4 +1,15 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, Query, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Body,
+  Param,
+  Query,
+  UseGuards,
+  UploadedFile,
+} from '@nestjs/common';
 import { TalentService } from './talent.service';
 import { CreateTalentDto } from './dto/talent.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
@@ -33,6 +44,11 @@ export class TalentController {
   @Post()
   create(@Body() dto: CreateTalentDto) {
     return this.talentService.create(dto);
+  }
+
+  @Post('form-pre-filling')
+  formPreFilling(@UploadedFile() file: Express.Multer.File) {
+    console.log(file.filename);
   }
 
   @Put(':id')

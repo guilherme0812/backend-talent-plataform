@@ -1,4 +1,4 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import { ConflictException, forwardRef, Inject, Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Talent } from './entities/talent.entity';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -10,6 +10,7 @@ export class TalentService {
   constructor(
     @InjectRepository(Talent)
     private readonly repo: Repository<Talent>,
+    @Inject(forwardRef(() => EmbeddingsService))
     private readonly embeddingsService: EmbeddingsService,
   ) {}
 
