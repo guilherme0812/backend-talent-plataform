@@ -7,11 +7,8 @@ import {
 
 import { DataSource } from 'typeorm';
 import { SimilarityResult } from './embeddings.controller';
-import { PDFParse } from 'pdf-parse';
 import { Ollama } from 'ollama';
 import { ConfigService } from '@nestjs/config';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Talent } from '../talent/entities/talent.entity';
 
 interface TextChunk {
   type: string; // 'summary' | 'experience' | 'skills' | 'education' | 'generic'
@@ -25,7 +22,6 @@ export class EmbeddingsService {
   private readonly ollamaModel: string;
 
   constructor(
-    @InjectRepository(Talent)
     private readonly dataSource: DataSource,
     private readonly config: ConfigService,
   ) {
@@ -35,9 +31,7 @@ export class EmbeddingsService {
     this.ollamaModel = this.config.get('OLLAMA_EMBED_MODEL', 'nomic-embed-text');
   }
 
-  async generateEmbeddingfromFile(file: Express.Multer.File, talentId: string) {
-    const text = await this.extractTextFromFile(file);
-
+  async generateEmbeddingfromFile(text: string, talentId: string) {
     if (!text || text.trim().length === 0) {
       throw new BadRequestException('It was not possible to extract text from the uploaded file.');
     }
@@ -111,13 +105,6 @@ export class EmbeddingsService {
       }
     }
     return chunks;
-  }
-
-  private async extractTextFromFile(file: Express.Multer.File): Promise<string> {
-    const parser = new PDFParse({ data: file.buffer });
-    const result = await parser.getText();
-
-    return result.text;
   }
 
   async embedDocument(text: string): Promise<number[]> {
