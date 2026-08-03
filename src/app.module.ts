@@ -8,8 +8,9 @@ import { FilesModule } from './modules/files/files.module';
 import { EmbeddingsModule } from './modules/embeddings/embeddings.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { UsersModule } from './modules/users/users.module';
-import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
+import { ThrottlerModule } from '@nestjs/throttler';
 import { APP_GUARD } from '@nestjs/core';
+import { CustomThrottlerGuard } from './common/guards/custom-throttler.guard';
 
 @Module({
   controllers: [AppController],
@@ -17,7 +18,7 @@ import { APP_GUARD } from '@nestjs/core';
     AppService,
     {
       provide: APP_GUARD,
-      useClass: ThrottlerGuard,
+      useClass: CustomThrottlerGuard,
     },
   ],
   imports: [
