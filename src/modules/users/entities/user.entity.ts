@@ -35,7 +35,7 @@ export class User {
   @Column({ type: 'enum', enum: UserRole, default: UserRole.TALENT })
   role: UserRole;
 
-  @OneToOne(() => Talent, { nullable: true })
+  @OneToOne(() => Talent, { nullable: true, eager: true })
   @JoinColumn()
   talent?: Talent;
 

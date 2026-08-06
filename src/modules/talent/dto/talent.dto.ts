@@ -18,7 +18,7 @@ export class CreateTalentDto {
   location?: string;
 
   @IsOptional()
-  linkedinUrl?: string;
+  linkedInUrl?: string;
 
   @IsOptional()
   githubUrl?: string;
